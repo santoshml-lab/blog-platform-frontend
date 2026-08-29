@@ -1,11 +1,4 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import "./App.css";
-import CreatePost from "./pages/CreatePost";
-import PostDetails from "./pages/PostDetails";
-import EditPost from "./pages/EditPost";
-import Home from "./pages/Home";
 
 function App() {
   return (
@@ -17,64 +10,17 @@ function App() {
 
       <Route
         path="/login"
-        element={<Login />}
+        element={<div>Login Page</div>}
       />
 
       <Route
-  path="/register"
-  element={<Register />}
-/>
-        
-        
-      
+        path="/register"
+        element={<div>Register Page</div>}
+      />
 
       <Route
-  path="/home"
-  element={<Home />}
-/>
-        
-
-        
-        
-      
-
-      <Route
-  path="/create-post"
-  element={<CreatePost />}
-/>
-        
-        
-      
-
-      <Route
-  path="/edit-post/:postId"
-  element={<EditPost />}
-/>
-        
-
-        
-        
-
-
-        
-      
-
-      <Route
-  path="/post/:postId"
-  element={<PostDetails />}
-/>
-        
-
-
-        
-        
-
-        
-      
-
-      <Route
-        path="*"
-        element={<Navigate to="/login" replace />}
+        path="/home"
+        element={<div>Home Page</div>}
       />
     </Routes>
   );
