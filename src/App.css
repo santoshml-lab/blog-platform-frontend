@@ -1041,3 +1041,12 @@
     padding: 30px 22px;
   }
 }
+
+.success-message {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  border-radius: 9px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 600;
+}
