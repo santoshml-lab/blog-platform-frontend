@@ -19,22 +19,25 @@ function Login() {
     setLoading(true);
 
     try {
-      const data = await loginUser(username, password);
+      const data = await loginUser(
+        username,
+        password
+      );
 
       localStorage.setItem(
-     "access_token",
-     data.access_token
-);
-        
-        
-      
+        "access_token",
+        data.access_token
+      );
 
       localStorage.setItem(
         "username",
         username
       );
 
-      navigate("/home");
+      navigate("/home", {
+        replace: true,
+      });
+
     } catch (err) {
       setError(
         err.message || "Login failed"
@@ -46,12 +49,21 @@ function Login() {
 
   return (
     <div className="auth-page">
+
       <div className="auth-card">
-        <h1>Welcome Back 👋</h1>
+
+        <div className="auth-logo">
+          📝
+        </div>
+
+        <h1>
+          Welcome Back 👋
+        </h1>
 
         <p className="auth-subtitle">
           Login to your Blog Platform
         </p>
+
 
         {error && (
           <div className="error-message">
@@ -59,42 +71,59 @@ function Login() {
           </div>
         )}
 
+
         <form onSubmit={handleSubmit}>
-          <label>
-            Username
-          </label>
 
-          <input
-            type="text"
-            placeholder="Enter username"
-            value={username}
-            onChange={(event) =>
-              setUsername(event.target.value)
-            }
-            required
-          />
+          <div className="form-group">
+            <label htmlFor="username">
+              Username
+            </label>
 
-          <label>
-            Password
-          </label>
+            <input
+              id="username"
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(event) =>
+                setUsername(event.target.value)
+              }
+              autoComplete="username"
+              required
+            />
+          </div>
 
-          <input
-            type="password"
-            placeholder="Enter password"
-            value={password}
-            onChange={(event) =>
-              setPassword(event.target.value)
-            }
-            required
-          />
+
+          <div className="form-group">
+            <label htmlFor="password">
+              Password
+            </label>
+
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(event) =>
+                setPassword(event.target.value)
+              }
+              autoComplete="current-password"
+              required
+            />
+          </div>
+
 
           <button
             type="submit"
             disabled={loading}
+            className="auth-submit-btn"
           >
-            {loading ? "Logging in..." : "Login"}
+            {loading
+              ? "Logging in..."
+              : "Login →"}
           </button>
+
         </form>
+
 
         <p className="auth-footer">
           Don't have an account?{" "}
@@ -102,7 +131,9 @@ function Login() {
             Create one
           </Link>
         </p>
+
       </div>
+
     </div>
   );
 }
