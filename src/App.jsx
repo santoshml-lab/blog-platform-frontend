@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import "./App.css";
 import CreatePost from "./pages/CreatePost";
 import PostDetails from "./pages/PostDetails";
+import EditPost from "./pages/EditPost";
 
 function App() {
   return (
@@ -40,9 +41,17 @@ function App() {
       
 
       <Route
-        path="/edit-post/:postId"
-        element={<div>Edit Post Page</div>}
-      />
+  path="/edit-post/:postId"
+  element={<EditPost />}
+/>
+        
+
+        
+        
+
+
+        
+      
 
       <Route
   path="/post/:postId"
