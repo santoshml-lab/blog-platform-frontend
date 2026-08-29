@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "./App.css";
 import CreatePost from "./pages/CreatePost";
+import PostDetails from "./pages/PostDetails";
 
 function App() {
   return (
@@ -44,9 +45,17 @@ function App() {
       />
 
       <Route
-        path="/post/:postId"
-        element={<div>Post Details Page</div>}
-      />
+  path="/post/:postId"
+  element={<PostDetails />}
+/>
+        
+
+
+        
+        
+
+        
+      
 
       <Route
         path="*"
