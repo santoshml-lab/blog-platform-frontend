@@ -16,15 +16,24 @@ function CreatePost() {
     event.preventDefault();
 
     setError("");
+
+    if (!title.trim() || !content.trim()) {
+      setError("Please enter both title and content.");
+      return;
+    }
+
     setLoading(true);
 
     try {
       await createPost({
-        title,
-        content,
+        title: title.trim(),
+        content: content.trim(),
       });
 
-      navigate("/home");
+      navigate("/home", {
+        replace: true,
+      });
+
     } catch (err) {
       setError(
         err.message || "Failed to create post"
@@ -36,19 +45,28 @@ function CreatePost() {
 
   return (
     <div className="create-page">
+
       <div className="create-card">
+
         <div className="create-header">
+
           <div>
             <h1>Create New Post ✍️</h1>
+
             <p>
               Share your thoughts with the community.
             </p>
           </div>
 
-          <Link to="/home">
+          <Link
+            to="/home"
+            className="back-link"
+          >
             ← Back
           </Link>
+
         </div>
+
 
         {error && (
           <div className="error-message">
@@ -56,45 +74,66 @@ function CreatePost() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
-          <label>
-            Title
-          </label>
 
-          <input
-            type="text"
-            placeholder="Enter your post title"
-            value={title}
-            onChange={(event) =>
-              setTitle(event.target.value)
-            }
-            required
-          />
+        <form
+          onSubmit={handleSubmit}
+          className="create-form"
+        >
 
-          <label>
-            Content
-          </label>
+          <div className="form-group">
 
-          <textarea
-            placeholder="Write your post..."
-            value={content}
-            onChange={(event) =>
-              setContent(event.target.value)
-            }
-            rows="10"
-            required
-          />
+            <label htmlFor="title">
+              Title
+            </label>
+
+            <input
+              id="title"
+              type="text"
+              placeholder="Enter your post title"
+              value={title}
+              onChange={(event) =>
+                setTitle(event.target.value)
+              }
+              required
+            />
+
+          </div>
+
+
+          <div className="form-group">
+
+            <label htmlFor="content">
+              Content
+            </label>
+
+            <textarea
+              id="content"
+              placeholder="Write your post..."
+              value={content}
+              onChange={(event) =>
+                setContent(event.target.value)
+              }
+              rows="12"
+              required
+            />
+
+          </div>
+
 
           <button
             type="submit"
             disabled={loading}
+            className="publish-btn"
           >
             {loading
               ? "Publishing..."
-              : "Publish Post"}
+              : "Publish Post 🚀"}
           </button>
+
         </form>
+
       </div>
+
     </div>
   );
 }
