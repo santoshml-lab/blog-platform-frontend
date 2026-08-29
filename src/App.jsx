@@ -5,6 +5,7 @@ import "./App.css";
 import CreatePost from "./pages/CreatePost";
 import PostDetails from "./pages/PostDetails";
 import EditPost from "./pages/EditPost";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -28,9 +29,14 @@ function App() {
       
 
       <Route
-        path="/home"
-        element={<div>Home Page</div>}
-      />
+  path="/home"
+  element={<Home />}
+/>
+        
+
+        
+        
+      
 
       <Route
   path="/create-post"
