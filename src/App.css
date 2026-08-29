@@ -125,3 +125,169 @@
     font-size: 25px;
   }
 }
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.home-page {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.home-header {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-header h1 {
+  font-size: 34px;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.home-header p {
+  color: #6b7280;
+}
+
+.create-post-btn {
+  padding: 12px 18px;
+  background: #4f46e5;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.create-post-btn:hover {
+  background: #4338ca;
+}
+
+.posts-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.posts-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.posts-heading h2 {
+  font-size: 24px;
+  color: #111827;
+}
+
+.refresh-btn {
+  padding: 9px 14px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 8px;
+  color: #374151;
+}
+
+.refresh-btn:hover {
+  background: #f3f4f6;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.post-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+}
+
+.post-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.post-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.post-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 15px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.post-card-footer span {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.post-card-footer a {
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.status-message,
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.empty-state h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.empty-state p {
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+.empty-state a {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+
+/* =========================
+   HOME RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .home-page {
+    padding: 25px 18px;
+  }
+
+  .home-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
