@@ -662,3 +662,256 @@
     width: 100%;
   }
 }
+
+/* =========================
+   HOME PAGE POLISH
+========================= */
+
+.home-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 50px;
+}
+
+.home-header {
+  padding: 35px 6%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.home-header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #111827;
+}
+
+.home-header p {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+.home-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.welcome-user {
+  color: #374151;
+  font-weight: 600;
+}
+
+.create-post-btn {
+  display: inline-block;
+  padding: 11px 17px;
+  background: #4f46e5;
+  color: white;
+  border-radius: 9px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.create-post-btn:hover {
+  opacity: 0.9;
+}
+
+.logout-btn {
+  padding: 11px 17px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* =========================
+   POSTS CONTAINER
+========================= */
+
+.posts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.posts-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.posts-heading h2 {
+  margin: 0;
+  color: #111827;
+}
+
+.refresh-btn {
+  padding: 9px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  color: #374151;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background: #f3f4f6;
+}
+
+
+/* =========================
+   POST GRID
+========================= */
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+  gap: 22px;
+}
+
+.post-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.05);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.post-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #111827;
+  font-size: 21px;
+}
+
+.post-card p {
+  color: #6b7280;
+  line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-footer {
+  margin-top: auto;
+  padding-top: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid #f3f4f6;
+}
+
+.post-card-footer span {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.post-card-footer a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.post-card-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   STATUS / ERROR
+========================= */
+
+.status-message {
+  padding: 40px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  border-radius: 9px;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  text-align: center;
+  padding: 70px 20px;
+  background: white;
+  border: 1px dashed #d1d5db;
+  border-radius: 16px;
+}
+
+.empty-state h3 {
+  color: #111827;
+}
+
+.empty-state p {
+  color: #6b7280;
+}
+
+.empty-state a {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .home-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 25px 20px;
+  }
+
+  .home-header h1 {
+    font-size: 27px;
+  }
+
+  .home-header-actions {
+    width: 100%;
+  }
+
+  .create-post-btn,
+  .logout-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .welcome-user {
+    display: none;
+  }
+
+  .posts-container {
+    padding: 25px 15px;
+  }
+}
