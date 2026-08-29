@@ -10,17 +10,11 @@ function App() {
 
       <Route
         path="/login"
-        element={<div>Login Page</div>}
-      />
-
-      <Route
-        path="/register"
-        element={<div>Register Page</div>}
-      />
-
-      <Route
-        path="/home"
-        element={<div>Home Page</div>}
+        element={
+          <h1 style={{ padding: "40px" }}>
+            BLOG PLATFORM IS WORKING ✅
+          </h1>
+        }
       />
     </Routes>
   );
