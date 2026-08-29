@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "./App.css";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
@@ -30,9 +31,12 @@ function App() {
       />
 
       <Route
-        path="/create-post"
-        element={<div>Create Post Page</div>}
-      />
+  path="/create-post"
+  element={<CreatePost />}
+/>
+        
+        
+      
 
       <Route
         path="/edit-post/:postId"
