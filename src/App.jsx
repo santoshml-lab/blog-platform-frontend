@@ -7,17 +7,39 @@ import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import PostDetails from "./pages/PostDetails";
 
+
+// =========================
+// PROTECTED ROUTE
+// =========================
+
+function ProtectedRoute({ children }) {
+  const token = localStorage.getItem("access_token");
+
+  if (!token) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+}
+
+
+// =========================
+// APP
+// =========================
+
 function App() {
   return (
     <Routes>
 
-      {/* Default */}
+      {/* Public Routes */}
+
       <Route
         path="/"
-        element={<Navigate to="/login" replace />}
+        element={
+          <Navigate to="/home" replace />
+        }
       />
 
-      {/* Authentication */}
       <Route
         path="/login"
         element={<Login />}
@@ -28,31 +50,53 @@ function App() {
         element={<Register />}
       />
 
-      {/* Posts */}
+
+      {/* Protected Routes */}
+
       <Route
         path="/home"
-        element={<Home />}
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
       />
 
       <Route
         path="/create-post"
-        element={<CreatePost />}
+        element={
+          <ProtectedRoute>
+            <CreatePost />
+          </ProtectedRoute>
+        }
       />
 
       <Route
         path="/edit-post/:postId"
-        element={<EditPost />}
+        element={
+          <ProtectedRoute>
+            <EditPost />
+          </ProtectedRoute>
+        }
       />
 
       <Route
         path="/post/:postId"
-        element={<PostDetails />}
+        element={
+          <ProtectedRoute>
+            <PostDetails />
+          </ProtectedRoute>
+        }
       />
 
-      {/* Unknown route */}
+
+      {/* Unknown Route */}
+
       <Route
         path="*"
-        element={<Navigate to="/login" replace />}
+        element={
+          <Navigate to="/login" replace />
+        }
       />
 
     </Routes>
