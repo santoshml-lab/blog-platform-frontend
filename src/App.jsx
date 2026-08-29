@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
 
       <Route
         path="/login"
-        element={<div>Login Page</div>}
+        element={<Login />}
       />
 
       <Route
