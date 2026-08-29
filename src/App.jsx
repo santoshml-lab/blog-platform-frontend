@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -15,9 +16,12 @@ function App() {
       />
 
       <Route
-        path="/register"
-        element={<div>Register Page</div>}
-      />
+  path="/register"
+  element={<Register />}
+/>
+        
+        
+      
 
       <Route
         path="/home"
