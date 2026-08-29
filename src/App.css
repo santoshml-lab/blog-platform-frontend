@@ -625,3 +625,40 @@
     flex-direction: column;
   }
 }
+
+.home-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.welcome-user {
+  font-weight: 600;
+  color: #374151;
+}
+
+.logout-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .home-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-header-actions {
+    width: 100%;
+  }
+}
